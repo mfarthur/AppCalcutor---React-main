@@ -4,70 +4,89 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: linear-gradient(-45deg, #000, #222, #000, #222, #000);
-  background-size: 400% 400%; /* Aumenta o tamanho do degradê para criar ondas mais frequentes */
-  animation: wave 4s infinite alternate; /* Aplica a animação com maior frequência */
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #1e3c72, #2a5298);
+  background-size: 300% 300%;
+  animation: wave 6s ease-in-out infinite;
+  font-family: 'Arial', sans-serif;
 }
 
 @keyframes wave {
   0% {
-    background-position: 0% 0%;
+    background-position: 0% 50%;
   }
   100% {
-    background-position: 100% 100%;
+    background-position: 100% 50%;
   }
 }
 
 #calculator {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5px;
-  width: 300px;
-  padding: 10px;
-  border-radius: 15px;
-}
-
-button {
-  padding: 20px;
-  font-size: 20px;
-  background-color: #333;
-  border: none;
-  border-radius: 10px;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #666;
-}
-
-button#clear {
-  background-color: #808080;
-}
-
-button#zero {
-  grid-column: span 3; /* Faz o botão do zero ocupar três colunas */
-}
-
-button#equals {
-  grid-row: span 2; /* Faz o botão de igual ocupar duas linhas */
-  background-color: #ff9500; /* Aplica a mesma cor dos operadores */
+  grid-gap: 8px;
+  width: 350px;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: #292b2f;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
 
 #display {
   grid-column: span 4;
-  padding: 15px;
-  background-color: #333;
+  padding: 20px;
+  background-color: #1c1e22;
+  color: #e0e0e0;
+  font-size: 2rem;
   text-align: right;
-  font-size: 40px;
+  border-radius: 12px;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   white-space: nowrap;
-  color: #fff;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.5rem;
+  color: #f1f1f1;
+  background-color: #3c4045;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: all 0.3s;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Estiliza os botões dos operadores */
-button#divide, button#multiply, button#subtract, button#add, button#decimal {
-  background-color: #ff9500;
+button:hover {
+  background-color: #52575d;
+  transform: scale(1.05);
 }
 
+button:active {
+  transform: scale(0.95);
+  background-color: #666c72;
+}
+
+button#clear {
+  background-color: #ff6363;
+  color: #fff;
+}
+
+button#equals {
+  grid-row: span 2;
+  background-color: #ff9f00;
+  color: #fff;
+  font-weight: bold;
+}
+
+button#zero {
+  grid-column: span 2;
+}
+
+button#divide,
+button#multiply,
+button#subtract,
+button#add {
+  background-color: #ff9f00;
+}
+
+button#decimal {
+  background-color: #3c4045;
+}
